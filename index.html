@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sesi-2/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul class="navbar-ul">
+            <li class="navbar-li"> <a href="/">HOME</a> </li>
+            <li class="navbar-li"> <a href="/">PRODUCT</a> </li>
+            <li class="navbar-li"> <a href="/">GALLERY</a> </li>
+            <li class="navbar-li"> <a href="/">BLOG</a> </li>
+            <li class="navbar-li"> <a href="/">INVENTORY</a> </li>
+        </ul>
+    </nav>
+    
+    <div class="card">
+        <div class="flex">
+            <div class="left">
+                <img src="../sesi-2/2.jpg" class="img">
+            </div>
+            <div class="mid">
+                <h2 id="name">Achmad Dinofaldi Firmansyah</h2>
+                <p id="role">Front End Designer</p>
+                <a href="#" class="btn-kontak" id="btn-edit">Edit</a>
+                <a href="#" class="btn-resume">Resume</a>
+            </div>
+            <div class="mid-2">
+                <p>Availability</p>                
+                <p>Usia</p>                
+                <p>Lokasi</p>                
+                <p>Pengalaman</p>              
+                <p>Email</p>               
+            </div>
+            <div class="right">
+                <p id="avail">Full Time</p>
+                <p id="usia">21</p>
+                <p id="lokasi">Jember</p>
+                <p id="pengalaman">2</p>
+                <p id="email">aldi.novaldi.frmnsyah@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card input-card" id="card-input">
+        <form id="form">
+            <label for="">Nama</label>
+            <input type="text" name="nama" class="input-group" id="input-name"><br>
+            <label for="">Role</label>
+            <input type="text" name="role" class="input-group" id="input-role"><br>
+            <label for="">Availability</label>
+            <input type="text" name="availability" class="input-group" id="input-avail"><br>
+            <label for="">Usia</label>
+            <input type="number" name="usia" class="input-group" id="input-usia"><br>
+            <label for="">Lokasi</label>
+            <input type="text" name="lokasi" class="input-group" id="input-lokasi"><br>
+            <label for="">Years Experience</label>
+            <input type="number" name="years_experience" class="input-group" id="input-pengalaman"><br>
+            <label for="">Email</label>
+            <input type="email" name="email" class="input-group" id="input-email"><br>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+    <script>
+        document.getElementById('btn-edit').addEventListener('click', function(){
+            document.getElementById('card-input').style.display = 'block';
+        });
+
+        function show(){
+            let name = document.getElementById('name').innerHTML;
+            let role = document.getElementById('role').innerHTML;
+            let avail = document.getElementById('avail').innerHTML;
+            let usia = document.getElementById('usia').innerHTML;
+            let lokasi = document.getElementById('lokasi').innerHTML;
+            let pengalaman = document.getElementById('pengalaman').innerHTML;
+            let email = document.getElementById('email').innerHTML;
+
+            document.getElementById('input-name').value = name;
+            document.getElementById('input-role').value = role;
+            document.getElementById('input-avail').value = avail;
+            document.getElementById('input-usia').value = usia;
+            document.getElementById('input-lokasi').value = lokasi;
+            document.getElementById('input-pengalaman').value = pengalaman;
+            document.getElementById('input-email').value = email;
+        }
+        
+        show();
+
+        document.getElementById('form').addEventListener('submit', function(e){
+            e.preventDefault();
+            let name = document.getElementById('input-name').value;
+            let role = document.getElementById('input-role').value;
+            let avail = document.getElementById('input-avail').value;
+            let usia = document.getElementById('input-usia').value;
+            let lokasi = document.getElementById('input-lokasi').value;
+            let pengalaman = document.getElementById('input-pengalaman').value;
+            let email = document.getElementById('input-email').value;
+
+            document.getElementById('name').innerHTML = name;
+            document.getElementById('role').innerHTML = role;
+            document.getElementById('avail').innerHTML = avail;
+            document.getElementById('usia').innerHTML = usia;
+            document.getElementById('lokasi').innerHTML = lokasi;
+            document.getElementById('pengalaman').innerHTML = pengalaman;
+            document.getElementById('email').innerHTML = email;
+
+            document.getElementById('card-input').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
